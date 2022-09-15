@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "mssql1": {
+      "ignored": "true",
+      "type": "mssql",
+      "connectionId": "ConnectionStrings:default"
+    },
+    "sqlite1": {
+      "secretStore": null,
+      "type": "sqlite.local",
+      "connectionId": "ConnectionStrings:default",
+      "dynamicId": null
+    }
+  }
+}

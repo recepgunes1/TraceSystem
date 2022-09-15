@@ -1,0 +1,136 @@
+﻿@model Operation;
+
+@{
+    ViewData["Title"] = "Düzenle";
+}
+
+<div class="p-4">
+    <form method="post">
+        <div class="row mb-3">
+            <div class="col-2 text-nowrap">
+                <label asp-for="ID" class="col-2 text-nowrap control-label"></label>
+            </div>
+            <div class="col-8">
+                <input asp-for="ID" class="form-control" value="@Model.ID" disabled/>
+                <span asp-validation-for="ID" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-2 text-nowrap">
+                <label asp-for="CustomerName" class="col-2 text-nowrap control-label"></label>
+            </div>
+            <div class="col-8">
+                <input asp-for="CustomerName" class="form-control" value="@Model.CustomerName"/>
+                <span asp-validation-for="CustomerName" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-2 text-nowrap">
+                <label asp-for="CustomerContact" class="col-2 text-nowrap control-label"></label>
+            </div>
+            <div class="col-8">
+                <input asp-for="CustomerContact" class="form-control" value="@Model.CustomerContact"/>
+                <span asp-validation-for="CustomerContact" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-2 text-nowrap">
+                <label asp-for="Device" class="col-2 text-nowrap control-label"></label>
+            </div>
+            <div class="col-8">
+                <input asp-for="Device" class="form-control" value="@Model.Device"/>
+                <span asp-validation-for="Device" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-2 text-nowrap">
+                <label asp-for="DeviceAppearance" class="col-2 text-nowrap control-label"></label>
+            </div>
+            <div class="col-8">
+                <input asp-for="DeviceAppearance" class="form-control" value="@Model.DeviceAppearance"/>
+                <span asp-validation-for="DeviceAppearance" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-2 text-nowrap">
+                <label asp-for="DeviceFault" class="col-2 text-nowrap control-label"></label>
+            </div>
+            <div class="col-8">
+                <input asp-for="DeviceFault" class="form-control" value="@Model.DeviceFault"/>
+                <span asp-validation-for="DeviceFault" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-2 text-nowrap">
+                <label asp-for="DeviceAccessory" class="col-2 text-nowrap control-label"></label>
+            </div>
+            <div class="col-8">
+                <input asp-for="DeviceAccessory" class="form-control"  value="@Model.DeviceAccessory"/>
+                <span asp-validation-for="DeviceAccessory" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-2 text-nowrap">
+                <label asp-for="DeviceIMEI" class="col-2 text-nowrap control-label"></label>
+            </div>
+            <div class="col-8">
+                <input asp-for="DeviceIMEI" class="form-control" value="@Model.DeviceIMEI"/>
+                <span asp-validation-for="DeviceIMEI" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-2 text-nowrap">
+                <label asp-for="DevicePassword" class="col-2 text-nowrap control-label"></label>
+            </div>
+            <div class="col-8">
+                <input asp-for="DevicePassword" class="form-control" value="@Model.DevicePassword"/>
+                <span asp-validation-for="DevicePassword" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-2 text-nowrap">
+                <label asp-for="FaultOperation" class="col-2 text-nowrap control-label"></label>
+            </div>
+            <div class="col-8">
+                <input asp-for="FaultOperation" class="form-control" value="@Model.FaultOperation"/>
+                <span asp-validation-for="FaultOperation" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-2 text-nowrap">
+                <label asp-for="Price" class="col-2 text-nowrap control-label"></label>
+            </div>
+            <div class="col-8">
+                <input asp-for="Price" asp-for-invariant="numberProp" class="form-control" value="@Model.Price"/>
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-2 text-nowrap">
+                <label asp-for="RegisterDate" class="col-2 text-nowrap control-label"></label>
+            </div>
+            <div class="col-8">
+                <input asp-for="RegisterDate" class="form-control" value="@Model.RegisterDate.ToString("yyyy-MM-dd HH:mm")" asp-format="{0:yyyy-MM-dd HH:mm}" disabled/>
+                <span asp-validation-for="RegisterDate" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-2 text-nowrap">
+                <label asp-for="Explanation" class="col-2 text-nowrap control-label"></label>
+            </div>
+            <div class="col-8">
+                <input asp-for="Explanation" class="form-control" value="@Model.Explanation"/>
+                <span asp-validation-for="Explanation" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row mb-3 d-flex justify-content-center">
+            <button type="submit" class="btn btn-success" style="width: 50%">Güncelle</button>
+        </div>
+    </form>
+</div>
+
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+ }

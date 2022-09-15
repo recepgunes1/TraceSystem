@@ -1,0 +1,118 @@
+﻿@model Operation;
+
+@{
+    ViewData["Title"] = "Yeni Kayıt Ekle";
+}
+
+<div class="p-4">
+    <form method="post">
+        <div class="row mb-3">
+            <div class="col-2 text-nowrap">
+                <label asp-for="CustomerName" class="col-2 text-nowrap control-label"></label>
+            </div>
+            <div class="col-8">
+                <input asp-for="CustomerName" class="form-control" />
+                <span asp-validation-for="CustomerName" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-2 text-nowrap">
+                <label asp-for="CustomerContact" class="col-2 text-nowrap control-label"></label>
+            </div>
+            <div class="col-8">
+                <input asp-for="CustomerContact" class="form-control" />
+                <span asp-validation-for="CustomerContact" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-2 text-nowrap">
+                <label asp-for="Device" class="col-2 text-nowrap control-label"></label>
+            </div>
+            <div class="col-8">
+                <input asp-for="Device" class="form-control" />
+                <span asp-validation-for="Device" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-2 text-nowrap">
+                <label asp-for="DeviceAppearance" class="col-2 text-nowrap control-label"></label>
+            </div>
+            <div class="col-8">
+                <input asp-for="DeviceAppearance" class="form-control" />
+                <span asp-validation-for="DeviceAppearance" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-2 text-nowrap">
+                <label asp-for="DeviceFault" class="col-2 text-nowrap control-label"></label>
+            </div>
+            <div class="col-8">
+                <input asp-for="DeviceFault" class="form-control" />
+                <span asp-validation-for="DeviceFault" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-2 text-nowrap">
+                <label asp-for="DeviceAccessory" class="col-2 text-nowrap control-label"></label>
+            </div>
+            <div class="col-8">
+                <input asp-for="DeviceAccessory" class="form-control" />
+                <span asp-validation-for="DeviceAccessory" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-2 text-nowrap">
+                <label asp-for="DeviceIMEI" class="col-2 text-nowrap control-label"></label>
+            </div>
+            <div class="col-8">
+                <input asp-for="DeviceIMEI" class="form-control" />
+                <span asp-validation-for="DeviceIMEI" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-2 text-nowrap">
+                <label asp-for="DevicePassword" class="col-2 text-nowrap control-label"></label>
+            </div>
+            <div class="col-8">
+                <input asp-for="DevicePassword" class="form-control" />
+                <span asp-validation-for="DevicePassword" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-2 text-nowrap">
+                <label asp-for="FaultOperation" class="col-2 text-nowrap control-label"></label>
+            </div>
+            <div class="col-8">
+                <input asp-for="FaultOperation" class="form-control" />
+                <span asp-validation-for="FaultOperation" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-2 text-nowrap">
+                <label asp-for="Price" class="col-2 text-nowrap control-label"></label>
+            </div>
+            <div class="col-8">
+                <input asp-for="Price" class="form-control" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-2 text-nowrap">
+                <label asp-for="Explanation" class="col-2 text-nowrap control-label"></label>
+            </div>
+            <div class="col-8">
+                <input asp-for="Explanation" class="form-control" />
+                <span asp-validation-for="Explanation" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row mb-3 d-flex justify-content-center">
+            <button type="submit" class="btn btn-success" style="width: 50%">Kayıt Et</button>
+        </div>
+    </form>
+</div>
+
+@section Scripts{
+    @{
+    <partial name="_ValidationScriptsPartial" />
+    }
+ }

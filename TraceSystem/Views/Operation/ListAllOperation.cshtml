@@ -1,0 +1,71 @@
+﻿@model OperationPagingModel
+
+@{
+    ViewData["Title"] = "Tüm İşlemler";
+}
+
+<div class="p-4">
+    <table class="table table-bordered table-striped mb-5">
+        <thead>
+            <tr>
+                <th>@Html.DisplayNameFor(o => o.OperationForProperties.ID)</th>
+                <th>@Html.DisplayNameFor(o => o.OperationForProperties.CustomerName)</th>
+                <th>@Html.DisplayNameFor(o => o.OperationForProperties.Device)</th>
+                <th>@Html.DisplayNameFor(o => o.OperationForProperties.FaultOperation)</th>
+                <th>@Html.DisplayNameFor(o => o.OperationForProperties.RegisterDate)</th>
+                <th>@Html.DisplayNameFor(o => o.OperationForProperties.DeliveryDate)</th>
+                <th>@Html.DisplayNameFor(o => o.OperationForProperties.DeliveryStatus)</th>
+                <th></th>
+            </tr>
+        </thead>
+        @if (@Model.Operations != null)
+        {
+            <tbody>
+                @foreach (var item in @Model.Operations)
+                {
+                    <tr>
+                        <td>@item.ID.ToString("0000")</td>
+                        <td>@item.CustomerName</td>
+                        <td>@item.Device</td>
+                        <td>@item.FaultOperation</td>
+                        <td>@item.RegisterDate</td>
+                        <td>@item.DeliveryDate</td>
+                        <td>
+                            @if (item.DeliveryStatus)
+                            {
+                                <p class="fw-bold text-success">Teslim Edildi</p>
+                            }
+                            else
+                            {
+                                <p class="fw-bold text-danger">Onarımda</p>
+                            }
+                        </td>
+                        <td>
+                            <a class="btn btn-info" asp-controller="Operation" asp-action="Detail" asp-route-id="@item.ID">Yazdır</a>
+                            <a class="btn btn-danger" asp-controller="Operation" asp-action="Delete" asp-route-id="@item.ID">Sil</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        }
+    </table>
+    <nav>
+        <ul class="pagination">
+            @for (var i = 1; i < @Model.MaxIndex + 1; i++)
+            {
+                @if (i == @Model.CurrentPage)
+                {
+                    <li class="page-item active">
+                        <a class="page-link" asp-controller="Operation" asp-action="ListAllOperation" asp-route-page="@i">@i</a>
+                    </li>
+                }
+                else
+                {
+                    <li class="page-item">
+                        <a class="page-link" asp-controller="Operation" asp-action="ListAllOperation" asp-route-page="@i">@i</a>
+                    </li>
+                }
+            }
+        </ul>
+    </nav>
+</div>

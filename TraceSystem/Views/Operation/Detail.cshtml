@@ -1,0 +1,123 @@
+﻿@using System.Globalization
+@model Operation;
+
+@{
+    ViewData["Title"] = "Detay";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <script>
+        window.onafterprint = function() {
+            window.location.href = '@ViewBag.PreviousUrl';
+        }
+    </script>
+</head>
+<body class="p-2" onload="window.print();">
+    <div class="container border border-dark">
+        <div class="row p-2 border-bottom border-dark">
+            <div class="row mb-2">
+                <h1>Hepsi GSM</h1>
+            </div>
+            <div class="row mb-1">
+                <div class="col">
+                    <span class="fw-bold">Tel:</span>
+                    <span class="fw-normal">0530 250 01 61</span>
+                </div>
+                <div class="col">
+                    <span class="fw-bold">Web:</span>
+                    <span class="fw-normal">hepsigsm.com</span>
+                </div>
+                <div class="col">
+                    <span class="fw-bold">Mail:</span>
+                    <span class="fw-normal">desek@hepsigsm.com</span>
+                </div>
+            </div>
+        </div>
+        <div class="row ps-2 pe-2 border-bottom border-dark">
+            <div class="col">
+                <span class="fw-bold me-3">Takip No.:</span>
+                <span class="fw-normal">@Model.ID.ToString("0000")</span>
+            </div>
+            <div class="col text-center border-start border-end border-dark">
+                <span class="fw-bold me-3">TEKNİK SERVİS FORMU</span>
+            </div>
+            <div class="col">
+                <span class="fw-bold me-3">Kayıt Tarihi:</span>
+                <span class="fw-normal">@Model.RegisterDate.ToString("dd-MM-yyyy | HH:mm")</span>
+            </div>
+        </div>
+        <div class="row p-2 border-bottom border-dark">
+            <div class="row mb-2 mt-2">
+                <div class="col">
+                    <span class="fw-bold me-3">Müşteri Adı:</span>
+                    <span class="fw-normal">@CultureInfo.CurrentCulture.TextInfo.ToTitleCase(Model.CustomerName ?? string.Empty)</span>
+                </div>
+            </div>
+            <div class="row mb-2">
+                <div class="col">
+                    <span class="fw-bold me-3">Müşteri İletişim:</span>
+                    <span class="fw-normal">@Model.CustomerContact</span>
+                </div>
+            </div>
+            @if (@Model.DeliveryDate != null)
+            {
+                <div class="row mb-2">
+                    <div class="col">
+                        <span class="fw-bold me-3">Teslim Tarihi:</span>
+                        <span class="fw-normal">@Model.DeliveryDate?.ToString("dd-MM-yyyy | HH:mm")</span>
+                    </div>
+                </div>
+            }
+        </div>
+        <div class="row p-2">
+            <div class="row mb-2 mt-2">
+                <div class="col">
+                    <span class="fw-bold me-3 me-3">Cihaz:</span>
+                    <span class="fw-normal">@Model.Device</span>
+                </div>
+            </div>
+            <div class="row mb-2">
+                <div class="col">
+                    <span class="fw-bold me-3 me-3">Cihazın Görünüşü:</span>
+                    <span class="fw-normal">@Model.DeviceAppearance</span>
+                </div>
+            </div>
+            <div class="row mb-2">
+                <div class="col">
+                    <span class="fw-bold me-3">Cihazın Sorunu:</span>
+                    <span class="fw-normal">@Model.DeviceFault</span>
+                </div>
+            </div>
+            <div class="row mb-2">
+                <div class="col">
+                    <span class="fw-bold me-3">Cihazın Aksesuarları:</span>
+                    <span class="fw-normal">@Model.DeviceAccessory</span>
+                </div>
+            </div>
+            <div class="row mb-2">
+                <div class="col">
+                    <span class="fw-bold me-3">IMEI:</span>
+                    <span class="fw-normal">@Model.DeviceIMEI</span>
+                </div>
+            </div>
+            <div class="row mb-2">
+                <div class="col">
+                    <span class="fw-bold me-3">Yapılacak İşlem:</span>
+                    <span class="fw-normal">@Model.FaultOperation</span>
+                </div>
+            </div>
+            <div class="row mb-2">
+                <div class="col">
+                    <span class="fw-bold me-3">Ücret:</span>
+                    <span class="fw-normal">@Model.Price.ToString("C")</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
