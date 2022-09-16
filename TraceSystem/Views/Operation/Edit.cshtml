@@ -4,14 +4,14 @@
     ViewData["Title"] = "Düzenle";
 }
 
-<div class="p-4">
+<div class="pt-5">
     <form method="post">
         <div class="row mb-3">
             <div class="col-2 text-nowrap">
                 <label asp-for="ID" class="col-2 text-nowrap control-label"></label>
             </div>
             <div class="col-8">
-                <input asp-for="ID" class="form-control" value="@Model.ID" disabled/>
+                <input asp-for="ID" class="form-control" value="@Model.ID.ToString("0000")" disabled/>
                 <span asp-validation-for="ID" class="text-danger"></span>
             </div>
         </div>

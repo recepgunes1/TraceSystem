@@ -4,15 +4,16 @@
     ViewData["Title"] = "Ana Sayfa";
 }
 
-<div class="p-4">
+<div class="pt-5">
     <table class="table table-bordered table-striped">
         <thead>
             <tr>
                 <th style="width: 5%">@Html.DisplayNameFor(o => o.ID)</th>
-                <th style="width: 10%">@Html.DisplayNameFor(o => o.CustomerName)</th>
+                <th style="width: 15%">@Html.DisplayNameFor(o => o.CustomerName)</th>
                 <th style="width: 15%">@Html.DisplayNameFor(o => o.Device)</th>
-                <th style="width: 40%">@Html.DisplayNameFor(o => o.DeviceFault)</th>
-                <th style="width: auto"></th>
+                <th style="width: 20%">@Html.DisplayNameFor(o => o.DeviceFault)</th>
+                <th style="width: 20%">@Html.DisplayNameFor(o => o.FaultOperation)</th>
+                <th style="width: 25%"></th>
             </tr>
         </thead>
         <tbody>
@@ -23,6 +24,7 @@
                     <td>@item.CustomerName</td>
                     <td>@item.Device</td>
                     <td>@item.DeviceFault</td>
+                    <td>@item.FaultOperation</td>
                     <td>
                         <a class="btn btn-primary" asp-controller="Operation" asp-action="Delivery" asp-route-id="@item.ID">Teslim Et</a>
                         <a class="btn btn-success" asp-controller="Operation" asp-action="Edit" asp-route-id="@item.ID">Düzenle</a>
